@@ -12,3 +12,6 @@ CREATE TABLE burgers (
   date TIMESTAMP NOT NULL,
   PRIMARY KEY (id)
 );
+
+
+select * from burgers;
