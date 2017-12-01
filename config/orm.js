@@ -54,13 +54,15 @@ var orm = {
     queryString += "VALUES (";
     queryString += printQuestionMarks(columnValues.length);
     queryString += ") ";
-
-    connection.query(queryString, function (err, result) {
+console.log(queryString);
+    connection.query(queryString, columnValues, function (err, result) {
       if (err) {
         throw err;
       }
+
+    console.log(result);
       cb(result);
-    })
+    });
   },
   updateOne: function (tableName, colValuObj, condition, cb){
     var queryString = "UPDATE " + tableName;
