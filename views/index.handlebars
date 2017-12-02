@@ -1,38 +1,44 @@
 
 
 
-
+<img src="/assets/img/burger.jpg" width="200" height="200">
 <h2>Eat-Da-Burger</h2>
 
-<div class="left">
-  <ul>
-    {{#each burger}}
-      {{#unless this.devoured}}
-      <p>
-        {{this.burger_name }}
-      </p>
-      <form>
-        <button class="change-devoured" type="submit" data-id={{this.id}}>Devoured</button>
-      </form>
-      {{/unless}}
-    {{/each}}
-  </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+<div class="row">
+  <div class="col-sm-6">
+      <ul>
+        {{#each burger}}
+        
+          {{#unless this.devoured}}     
+            {{this.burger_name }} 
+              
+          <form>
+            <button class="change-devoured" type="submit" data-id={{this.id}}>Devoured</button>
+          </form>       
+          {{/unless}}
+       
+        {{/each}}
+      </ul>
+      </div>
 </div>
+    </div>
 
-<h2>test</h2>
-<div class="right">
-  <ul>
-    {{#each burger}}
-      {{#if this.devoured}}
-      <p>
-        {{this.burger_name }}
-      </p>
-      {{/if}}
-    {{/each}}
-  </ul>
+    <div class="col-sm-6">
+      <ul>
+        {{#each burger}}
+          {{#if this.devoured}}
+          <p>
+            {{this.burger_name }}
+          </p>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 </div>
-
-
 
 
 <form class="create-form">
