@@ -7,7 +7,22 @@ h2 {
 	color: red;
 }
 
+.left {
+	text-align: right;
+}
 
+.btn {
+	text-align: left;
+}
+
+/* .right {
+	text-align: right;
+} */
+/* 
+ul {
+	display: inline;
+	display: inline-block;
+} */
 /*button {
 	float: right;
 }*/

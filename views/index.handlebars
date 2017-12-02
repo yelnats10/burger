@@ -1,41 +1,42 @@
-
-
-
 <img src="/assets/img/burger.jpg" width="200" height="200">
+
+
 <h2>Eat-Da-Burger</h2>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-<div class="row">
-  <div class="col-sm-6">
-      <ul>
-        {{#each burger}}
-        
-          {{#unless this.devoured}}     
-            {{this.burger_name }} 
-              
+      {{#each burger}}
+      {{#unless this.devoured}}
+      <div class="row">
+        <div class="col-sm-6 left">
+          {{!--
+          <ul> --}} 
+            <span>
+              {{this.burger_name }}
+            </span>
+            <br> {{!-- </ul> --}}
+        </div>
+        <div class="col-sm-6 btn">
           <form>
             <button class="change-devoured" type="submit" data-id={{this.id}}>Devoured</button>
-          </form>       
-          {{/unless}}
-       
-        {{/each}}
-      </ul>
+          </form>
+          <br>
+        </div>
       </div>
-</div>
+      {{/unless}}
+      {{/each}}
     </div>
 
-    <div class="col-sm-6">
-      <ul>
-        {{#each burger}}
-          {{#if this.devoured}}
-          <p>
-            {{this.burger_name }}
-          </p>
-          {{/if}}
-        {{/each}}
-      </ul>
+    <div class="col-sm-6 right">
+      {{!-- <ul> --}}
+        {{#each burger}} {{#if this.devoured}}
+        <p>
+          {{this.burger_name }}
+        </p>
+        <br>
+        {{/if}} {{/each}}
+      {{!-- </ul> --}}
     </div>
   </div>
 </div>
@@ -50,5 +51,6 @@
 
   <button type="submit">Submit</button>
 </form>
+<br>
 
 <p>Enter a burger you want to eat Click the "Submit" button</p>
