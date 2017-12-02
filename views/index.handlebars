@@ -4,6 +4,26 @@
 
 <h2>Eat-Da-Burger</h2>
 
+<ul>
+
+  {{#each burger}}
+    {{#unless this.devoured}}
+    <p>
+      {{this.burger_name }}
+    </p>
+
+    <form method="POST"  action="api/burger/{{this.id}}">
+      <button class="change-devoured" type="submit" data-id={{this.id}}>Devoured</button>
+    </form>
+      
+    
+    {{/unless}}
+  {{/each}}
+</ul>
+
+
+
+
 
 <form class="create-form">
 
