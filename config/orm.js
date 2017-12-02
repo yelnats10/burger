@@ -68,7 +68,7 @@ console.log(queryString);
     var queryString = "UPDATE " + tableName;
 
     queryString += " SET ";
-    queryString += objToSql(objColVals);
+    queryString += objToSql(colValuObj);
     queryString += " WHERE ";
     queryString += condition;
 
